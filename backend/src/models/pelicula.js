@@ -4,53 +4,38 @@ import { Schema, model } from "mongoose";
 
 const PeliculaSchema = new Schema(
   {
-    name: {
+    titulo: {
       type: String,
       require: true,
     },
 
-    lastName: {
+    descripcion: {
       type: String,
     },
 
-    birthday: {
-        
+    director: {
+
       type: Date,
       require: true,
     },
 
-    email: {
+    genero: {
       type: String,
     },
 
-    address: {
-      type: String,
+    anio: {
+      type: Number,
     },
 
-    password: {
-      type: String,
+    duracion: {
+      type: Number,
       require: true,
     },
-    hireDate: {
+    imagen: {
       type: String,
+
     },
 
-    telephone: {
-      type: String,
-      require: true,
-    },
-
-    dui: {
-      type: String,
-      require: true,
-    },
-    isVerified: {
-      type: Boolean,
-    },
-    issnumber: {
-      type: String,
-      require: true,
-    },
   },
   {
     timestamps: true,
