@@ -6,9 +6,9 @@ import bcryptjs from "bcryptjs"; // encriptar
 import jsonwebtoken from "jsonwebtoken"; //Token
 import { config } from "../config.js";
 
-const loginController = {};
+const LoginController = {};
 
-loginController.login = async (req, res) => {
+LoginController.login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -35,7 +35,7 @@ loginController.login = async (req, res) => {
     //Usuario no encontrado
     if (!userFound) {
       console.log("A pesar de buscar en todos lados, no existe");
-      return res.json({ message: "User not found" });
+      return res.json({ message: "Empleado not found" });
     }
 
     // Validar la contraseña
@@ -72,4 +72,4 @@ loginController.login = async (req, res) => {
   }
 };
 
-export default loginController;
+export default LoginController;
