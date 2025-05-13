@@ -1,17 +1,15 @@
 import express from "express";
+import multer from "multer";
 import PeliculaController from "../controllers/PeliculaController.js";
-// Router() nos ayuda a colocar los metodos
-// que tendra mi ruta
+
 const router = express.Router();
+
+//configurar una carpeta local que guarde las imagenes
+const upload = multer({dest: "public/"})
 
 router
   .route("/")
   .get(PeliculaController.getpelicula)
-  .post(PeliculaController.createPelicula);
-
-router
-  .route("/:id")
-  .put(PeliculaController.updatePelicula)
-  .delete(PeliculaController.deletePelicula);
+  .post(upload.single("image"), PeliculaController.createPelicula);
 
 export default router;
